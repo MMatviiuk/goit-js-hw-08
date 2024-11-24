@@ -1,10 +1,13 @@
 // Масив зображень для галереї
 const images = [
   {
+    // Попереднє зображення для перегляду в галереї
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    // Оригінальне зображення для модального вікна
     original:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    // Опис зображення
     description: 'Hokkaido Flower',
   },
   {
@@ -65,8 +68,10 @@ const images = [
   },
 ];
 
-// Отримання посилань на елементи DOM
+// Отримання посилань на елементи DOM\
+// Знаходимо елемент галереї у HTML-документі
 const gallery = document.querySelector('.gallery');
+// Знаходимо контейнер для галереї
 const wrapper = document.querySelector('.wrapper');
 
 // Функція для генерації розмітки галереї зображень
@@ -99,9 +104,12 @@ function generateGallery() {
 // Функція для налаштування обробки кліку на елементи галереї
 function setupImageClickHandler() {
   gallery.addEventListener('click', event => {
+    // Перевіряємо, чи клікнули саме на зображення
     if (event.target.classList.contains('gallery-image')) {
-      event.preventDefault(); // Забороняємо перезавантаження сторінки
+      event.preventPreventDefault(); // Забороняємо перезавантаження сторінки
+      // Отримуємо посилання на велике зображення
       const link = event.target.dataset.source;
+      // Отримуємо індекс зображення
       const index = parseInt(event.target.dataset.index, 10);
       openLightbox(link, index); // Відкриваємо модальне вікно з зображенням
     }
@@ -110,6 +118,7 @@ function setupImageClickHandler() {
 
 // Функція для відкриття модального вікна з великим зображенням
 function openLightbox(link, index) {
+  // Створюємо інстанцію модального вікна з зображенням
   const instance = basicLightbox.create(
     `
     <img width="1400" height="900" src="${link}">
@@ -117,7 +126,8 @@ function openLightbox(link, index) {
     { closable: true }
   );
 
-  instance.show(); // Показуємо модальне вікно
+  // Показуємо модальне вікно
+  instance.show();
 }
 
 // Генеруємо галерею та налаштовуємо обробку кліків

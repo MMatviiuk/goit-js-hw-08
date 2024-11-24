@@ -1,60 +1,14 @@
-/* Обнулення базових стилів для усіх елементів: видалення стандартних відступів та рамок для забезпечення однакового вигляду в різних браузерах */
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
 
-/* Встановлення box-sizing на border-box для всіх елементів та псевдоелементів, щоб ширина і висота включали внутрішні відступи та рамки */
-*, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
 
-/* Видалення обводки з елементів при фокусі та активному стані для покращення дизайну */
-:focus, :active {
-    outline: none;
-}
-
-/* Видалення обводки з посилань при фокусі та активному стані для кращого вигляду */
-a:focus, a:active {
-    outline: none;
-}
-
-/* Встановлення блочного відображення для HTML5-тегів, щоб вони коректно виглядали у старих браузерах */
-nav, footer, header, aside {
-    display: block;
-}
-
-/* Основні стилі для html та body, щоб забезпечити відповідний розмір та масштабування */
-html, body {
-    height: 100%;
-    width: 100%;
-    font-size: 100%;
-    line-height: 1;
-    font-size: 14px;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-
-/* Успадковування шрифту для елементів вводу, кнопок та текстових областей для збереження єдиного стилю */
-input, button, textarea {
-    font-family: inherit;
-}
-
-/* Видалення іконки очищення в Internet Explorer для полів вводу */
-input::-ms-clear {
-    display: none;
-}
-
-/* Зміна курсору на "руку" для кнопок, щоб показати, що їх можна натискати */
-button {
-    cursor: pointer;
-}
-
-/* Центрування контенту в обгортці галереї */
 .wrapper {
     display: flex;
     justify-content: center;
@@ -62,28 +16,24 @@ button {
     height: 100%;
 }
 
-/* Використання Grid Layout для галереї з визначенням колонок, рядків та відступів */
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 10px;
+    grid-column-gap: 10px ;
     grid-row-gap: 10px;
     max-width: 1280px;
     margin: 20px;
 }
 
-/* Видалення маркерів списку для елементів галереї */
 .gallery-item {
     list-style-type: none;
 }
 
-/* Встановлення ширини зображень у галереї */
 .gallery-image {
     width: 400px;
 }
 
-/* Стилі для кнопок навігації в галереї, включаючи положення та зовнішній вигляд */
 .gallery button {
     position: absolute;
     top: 50%;
@@ -97,22 +47,18 @@ button {
     z-index: 10000;
 }
 
-/* Положення кнопки "Назад" у галереї */
 .gallery .prev {
     left: 20px;
 }
 
-/* Положення кнопки "Далі" у галереї */
 .gallery .next {
     right: 20px;
 }
 
-/* Зміна кольору кнопок при наведенні курсору для покращення взаємодії */
 .gallery button:hover {
     color: #ccc;
 }
 
-/* Стилі для кнопки закриття модального вікна, включаючи положення та зовнішній вигляд */
 .closeBtn {
     position: absolute;
     top: 2%;
@@ -124,7 +70,6 @@ button {
     background: transparent;
 }
 
-/* Зміна кольору кнопки закриття при наведенні курсору */
 .closeBtn:hover {
     color: #ccc;
 }
